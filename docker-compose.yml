@@ -1,0 +1,35 @@
+services:
+  app:
+    container_name: book-register-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /var/www/html
+    volumes:
+      - ./book-register-app:/var/www/html
+    depends_on:
+      - mysql
+
+  nginx:
+    container_name: book-register-nginx
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./book-register-app:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+
+  mysql:
+    container_name: book-register-mysql
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: bookregister
+      MYSQL_USER: bookregister
+      MYSQL_PASSWORD: bookregister
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
