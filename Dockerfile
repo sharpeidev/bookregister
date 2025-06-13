@@ -20,4 +20,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
+RUN chmod -R +776 storage/
+
 RUN composer require barryvdh/laravel-dompdf --no-interaction
