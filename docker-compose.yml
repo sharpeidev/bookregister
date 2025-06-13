@@ -9,6 +9,8 @@ services:
       - ./book-register-app:/var/www/html
     depends_on:
       - mysql
+    command: >
+      sh -c "chmod -R 776 storage bootstrap/cache && php-fpm"
 
   nginx:
     container_name: book-register-nginx
