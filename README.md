@@ -1,6 +1,6 @@
 # Cadastro de livros
 
-Trata-se de um teste que consiste em desenvolver uma Cadastro de livros.
+Trata-se de um projeto teste cujo objetivo foi desenvolver um cadastro de livros.
 
 ### Tecnologias usadas
 
