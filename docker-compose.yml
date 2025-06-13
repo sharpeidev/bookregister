@@ -10,7 +10,7 @@ services:
     depends_on:
       - mysql
     command: >
-      sh -c "chmod -R 776 storage bootstrap/cache && php-fpm"
+      sh -c "chmod -R 777 storage bootstrap/cache && php-fpm"
 
   nginx:
     container_name: book-register-nginx
