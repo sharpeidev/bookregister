@@ -27,14 +27,14 @@ Clone o repositório do projeto
 ```sh
 git clone git@github.com:sharpeidev/bookregister.git
 ```
-
+Acesse o diretório do projeto
 ```sh
 cd bookregister
 ```
 
-Cria o .env
+Crie o .env
 ```sh
-cp api/.env.example api/.env
+cp book-register-app/.env.example book-register-app/.env
 ```
 
 Inicializa os containers Docker
@@ -57,7 +57,7 @@ Popula o banco de dados executando os seeds
 docker exec -it book-register-app php artisan db:seed
 ```
 
-Para acessar a aplicação
+Acesse a aplicação
 ```sh
 http://localhost:8080
 ```
